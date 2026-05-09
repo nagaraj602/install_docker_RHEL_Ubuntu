@@ -10,5 +10,8 @@ sudo gpasswd -a ubuntu docker > /dev/null 2>&1
 sudo gpasswd -a jenkins docker > /dev/null 2>&1
 echo "Docker installed sucessfully"
 newgrp docker
+sudo systemctl restart jenkins
 docker search ubuntu
-echo "If you see any permission denied error, please close the terminal and reopen it to get the updated docker group permission"
+if [ $? -ne 0 ]; then
+  echo "If you're seeing permission denied error, please close the terminal and reopen it to get the updated docker group permission"
+fi

@@ -10,7 +10,11 @@ sudo sh ./get-docker.sh  > /dev/null 2>&1
 sudo gpasswd -a ubuntu docker > /dev/null 2>&1
 sudo gpasswd -a jenkins docker > /dev/null 2>&1
 echo "Docker installed sucessfully"
+
+sudo usermod -aG docker ubuntu > /dev/null 2>&1
+sudo usermod -aG docker jenkins > /dev/null 2>&1
 newgrp docker
+
 sudo systemctl restart jenkins > /dev/null 2>&1
 docker search ubuntu
 if [ $? -ne 0 ]; then

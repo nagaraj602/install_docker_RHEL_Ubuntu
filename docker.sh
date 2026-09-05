@@ -13,6 +13,7 @@ echo "Docker installed sucessfully"
 
 sudo usermod -aG docker ubuntu > /dev/null 2>&1
 sudo usermod -aG docker jenkins > /dev/null 2>&1
+sudo usermod -aG docker "$(whoami)"
 newgrp docker
 
 sudo systemctl restart jenkins > /dev/null 2>&1

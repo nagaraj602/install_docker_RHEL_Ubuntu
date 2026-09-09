@@ -19,6 +19,7 @@ sudo usermod -aG docker "$(whoami)"
 newgrp docker
 
 sudo systemctl restart jenkins > /dev/null 2>&1
+sudo systemctl enable docker
 docker search ubuntu
 if [ $? -ne 0 ]; then
   echo "If you're seeing permission denied error, please close the terminal and reopen it to get the updated docker group permission"

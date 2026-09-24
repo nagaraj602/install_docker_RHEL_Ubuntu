@@ -4,6 +4,7 @@ echo
 echo "Installing docker..."
 
 sudo apt-get update -y > /dev/null 2>&1
+sudo apt-get upgrade -y  > /dev/null 2>&1
 sudo yum update -y > /dev/null 2>&1
 sudo apt-get install login -y > /dev/null 2>&1
 sudo dnf install shadow-utils -y > /dev/null 2>&1
